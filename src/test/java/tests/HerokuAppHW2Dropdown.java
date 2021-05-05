@@ -13,28 +13,21 @@ import java.util.concurrent.TimeUnit;
 
 public class HerokuAppHW2Dropdown {
     @Test
-    public void herokuAppHW1() {
+    public void dropdownListHW1Test() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         WebElement checkBox1;
-
         driver.get("http://the-internet.herokuapp.com/");
         driver.findElement(By.xpath("//*[@href = '/dropdown']")).click();
         Select select = new Select(driver.findElement(By.id("dropdown")));
-
         select.selectByVisibleText("Option 1");
-
         String text = select.getFirstSelectedOption().getText();
         Assert.assertEquals(text, "Option 1");
-
         select.selectByVisibleText("Option 2");
-
         String text1 = select.getFirstSelectedOption().getText();
         Assert.assertEquals(text1, "Option 2");
-
         driver.quit();
-
     }
 }
