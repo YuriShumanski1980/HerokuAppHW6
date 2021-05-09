@@ -23,17 +23,12 @@ public class HerokuAppHW2Dropdown {
         driver.get("http://the-internet.herokuapp.com/");
         driver.findElement(By.xpath("//*[@href = '/dropdown']")).click();
         Select select = new Select(driver.findElement(By.id("dropdown")));
-
         select.selectByVisibleText("Option 1");
-
-        String text = select.getFirstSelectedOption().getText();
-        Assert.assertEquals(text, "Option 1");
-
+        String firstSelectedOptionText = select.getFirstSelectedOption().getText();
+        Assert.assertEquals(firstSelectedOptionText, "Option 1");
         select.selectByVisibleText("Option 2");
-
-        String text1 = select.getFirstSelectedOption().getText();
-        Assert.assertEquals(text1, "Option 2");
-
+        String secondSelectedOptionText = select.getFirstSelectedOption().getText();
+        Assert.assertEquals(secondSelectedOptionText, "Option 2");
         driver.quit();
 
     }

@@ -7,12 +7,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
 public class HerokuAppHW1AddRemoveElements {
 
     @Test
-public void herokuAppHW1(){
+    public void herokuAppHW1() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
