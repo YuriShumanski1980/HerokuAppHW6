@@ -21,8 +21,8 @@ public class DynamicControlsPage {
         driver.findElement(By.xpath("//*[@label = 'blah']")).click();
         driver.findElement(By.xpath("//*[@onclick = 'swapCheckbox()']")).click();
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"message\"]")));
-        driver.findElement(By.xpath("//*[@id=\"message\"]")).getText();
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='message']")));
+        driver.findElement(By.xpath("//*[@id='message']")).getText();
         Assert.assertEquals("It's gone!", "It's gone!");
         driver.quit();
     }
@@ -37,7 +37,7 @@ public class DynamicControlsPage {
         driver.findElement(By.xpath("//*[@type= 'text']")).getAttribute("disabled");
         driver.findElement(By.xpath("//*[@onclick ='swapInput()']")).click();
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"message\"]")));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='message']")));
         driver.findElement(By.xpath("//*[@type= 'text']")).sendKeys("inPut enAbled");
         driver.findElement(By.xpath("//*[@type= 'text']")).getText();
         Assert.assertEquals("inPut enAbled", "inPut enAbled");
